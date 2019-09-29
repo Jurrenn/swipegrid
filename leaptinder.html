@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="leaptinder.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        <script src="../leap-0.6.4.js"></script>
+<title>leaptinder</title>
+</head>
+
+<body>
+  <div class="wrapper">
+        <div id="gestureData"></div>
+
+    <div id="logodiv"><h1 id="logo">Swipegrid.</h1></div>
+    <div class="clog"><h1>
+        </h1></div>
+        <div id="overlay">
+            <div id="overlayWhite">
+              <div class="overlayContainer">
+                
+                  <div class="gallery">
+                
+                    <div class="gallery-item">
+                      <img class="gallery-image" src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop" alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer">
+                    </div>
+                
+                    <div class="gallery-item">
+                      <img class="gallery-image" src="https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=500&h=500&fit=crop" alt="sunset behind San Francisco city skyline">
+                    </div>
+                
+                    <div class="gallery-item">
+                      <img class="gallery-image" src="https://images.unsplash.com/photo-1506045412240-22980140a405?w=500&h=500&fit=crop" alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan">
+                    </div>
+                
+                    <div class="gallery-item">
+                      <img class="gallery-image" src="https://images.unsplash.com/photo-1514041181368-bca62cceffcd?w=500&h=500&fit=crop" alt="car interior from central back seat position showing driver and blurred view through windscreen of a busy road at night">
+                    </div>
+                
+                    <div class="gallery-item">
+                      <img class="gallery-image" src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA">
+                    </div>
+                
+                    <div class="gallery-item">
+                      <img class="gallery-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSVLyh7_uh1_kHNBNE8Cbd5Bzyru9q3JLyr_yLHb6KPo36OudZ" alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
+                    </div>
+
+                    <div class="gallery-item">
+                        <img class="gallery-image" src="https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=500&h=500&fit=crop" alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
+                      </div>
+
+                      <div class="gallery-item">
+                          <img class="gallery-image" src="http://ongur.com/wp-content/uploads/2014/04/Beautiful-Chicago-Night-Skyline-Picture-5464.jpg" alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
+                        </div>
+                
+                  </div>
+                  <a href="#" onClick="alert('Grid successfully exported.');"><div class="export">Export Grid</div></a>
+                </div>
+            </div>
+        </div>
+       
+        <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
+                <div class="stackedcards-container">
+                  <div class="card-item"><h1>Gesture your index finger <span id="red">left to dislike</span> and <span id="green">right to like.</span><br>Swipe up to pull up your liked images.</h1></div>
+                  <div class="card-item"><img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop" alt="" /></div>
+                  <div class="card-item"><img src="https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=500&h=500&fit=crop" alt="" /></div>
+                  <div class="card-item"><img src="https://images.unsplash.com/photo-1506045412240-22980140a405?w=500&h=500&fit=crop" alt="" /></div>
+                  <div class="card-item"><img src="https://images.unsplash.com/photo-1445810694374-0a94739e4a03?w=500&h=500&fit=crop" alt="" /></div>
+                  <div class="card-item"><img src="http://getwallpapers.com/wallpaper/full/b/1/f/394308.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=500&h=500&fit=crop" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperplay.com/walls/full/d/9/b/16971.jpg" alt="" /></div>
+                  <div class="card-item"><img src="http://getwallpapers.com/wallpaper/full/b/1/f/394308.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperaccess.com/full/124587.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperplay.com/walls/full/d/9/b/16971.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://cdn.pixabay.com/photo/2017/02/08/17/24/butterfly-2049567__340.jpg" alt="" /></div>
+                  <div class="card-item"><img src="http://getwallpapers.com/wallpaper/full/b/1/f/394308.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperaccess.com/full/124587.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperplay.com/walls/full/d/9/b/16971.jpg" alt="" /></div>
+                  <div class="card-item"><img src="http://getwallpapers.com/wallpaper/full/b/1/f/394308.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperaccess.com/full/124587.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperplay.com/walls/full/d/9/b/16971.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://cdn.pixabay.com/photo/2017/02/08/17/24/butterfly-2049567__340.jpg" alt="" /></div>
+                  <div class="card-item"><img src="http://getwallpapers.com/wallpaper/full/b/1/f/394308.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperaccess.com/full/124587.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperplay.com/walls/full/d/9/b/16971.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://cdn.pixabay.com/photo/2017/02/08/17/24/butterfly-2049567__340.jpg" alt="" /></div>
+                  <div class="card-item"><img src="http://getwallpapers.com/wallpaper/full/b/1/f/394308.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperaccess.com/full/124587.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://wallpaperplay.com/walls/full/d/9/b/16971.jpg" alt="" /></div>
+                  <div class="card-item"><img src="https://cdn.pixabay.com/photo/2017/02/08/17/24/butterfly-2049567__340.jpg" alt="" /></div>
+                </div>
+
+                <div class="stackedcards--animatable stackedcards-overlay top">GRID</div>
+                <div class="stackedcards--animatable stackedcards-overlay right">LIKE</div>
+                <div class="stackedcards--animatable stackedcards-overlay left">DISLIKE</div>
+              </div>
+
+              <div class="global-actions">
+                <div class="left-action">Dislike</div>
+                <div class="top-action">Grid</div>
+                <div class="right-action">Like</div>
+              </div>
+
+              
+
+
+
+              <script src="leaptinder.js">
+
+                
+                // Store frame for motion functions
+    var previousFrame = null;
+
+    // Setup Leap loop with frame callback function
+    var controllerOptions = {enableGestures: true};
+
+    Leap.loop(controllerOptions, function(frame) {
+
+  // Display Gesture object data
+  var gestureOutput = document.getElementById("gestureData");
+  var gestureString = "";
+  if (frame.gestures.length > 0) {
+    for (var i = 0; i < frame.gestures.length; i++) {
+      var gesture = frame.gestures[i];
+
+      switch (gesture.type) {
+        case "circle":
+              gestureString += "<br>ID: " + gesture.id + "<br>type: " + gesture.type + ", "
+                        + "<br>center: " + vectorToString(gesture.center) + " mm, "
+                        + "<br>normal: " + vectorToString(gesture.normal, 2) + ", "
+                        + "<br>radius: " + gesture.radius.toFixed(1) + " mm, "
+                        + "<br>progress: " + gesture.progress.toFixed(2) + " rotations"
+                        + "<br>";
+            break;
+        case "swipe":
+          //Classify swipe as either horizontal or vertical
+          var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
+          //Classify as right-left or up-down
+          if(isHorizontal){
+              if(gesture.direction[0] > 0){
+                  swipeDirection = "right";
+              } else {
+                  swipeDirection = "left";
+              }
+          } else { //vertical
+              if(gesture.direction[1] > 0){
+                  swipeDirection = "up";
+              } else {
+                  swipeDirection = "down";
+              }                  
+          }
+          gestureString += "<br>ID: " + gesture.id + "<br>type: " + gesture.type + ", "
+                        + "<br>direction " + swipeDirection
+                        + "<br>gesture.direction vector: " + vectorToString(gesture.direction, 2) + ", "
+                        + "<br>";
+          break;
+       }
+     }
+  }
+  gestureOutput.innerHTML = gestureString + gestureOutput.innerHTML;
+
+})
+
+function vectorToString(vector, digits) {
+  if (typeof digits === "undefined") {
+    digits = 1;
+  }
+  return "(" + vector[0].toFixed(digits) + ", "
+             + vector[1].toFixed(digits) + ", "
+             + vector[2].toFixed(digits) + ")";
+}
+              
+              </script>
+
+            
+              <script>// Setup Leap loop with frame callback function
+                    var controllerOptions = {enableGestures: true};
+                    
+                    Leap.loop(controllerOptions, function(frame) {
+                    
+                      if (frame.gestures.length > 0) {
+                        for (var i = 0; i < frame.gestures.length; i++) {
+                          var gesture = frame.gestures[i];
+                          console.log(gesture, gesture.direction);
+                          if (gesture.type == "swipe") {
+                              console.log('type:', gesture.type)
+                              //Classify swipe as either horizontal or vertical
+                              var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
+                              //Classify as right-left or up-down
+                              if(isHorizontal){
+                                  if(gesture.direction[0] > 0){
+                                      swipeDirection = "right";
+                                      console.log("right");
+                                      onSwipeRight();
+                                      
+                                      
+                                      
+                                      
+                                      
+                                                         
+                                      
+        
+                                  } else {
+                                      swipeDirection = "left";
+                                      console.log("left");
+                                      onSwipeLeft();
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                  }
+                              } else { //vertical
+                                    console.log('hallo', gesture)
+                                  if(gesture.direction[1] > 0){
+                                      swipeDirection = "up";
+                                      console.log("up");
+                                      
+                                      on();
+                                      
+                                      
+                                      
+                                      
+                                      
+                                  } else {
+                                      swipeDirection = "down";
+                                      console.log("down");
+                                      off();
+                                     
+                                  }                  
+                              }
+                            }
+                           }
+                         }
+                      })</script>
+                      <script>
+
+                      //Overlay Function
+                    function on() {
+                    document.getElementById("overlay").style.display = "block";
+                    }
+
+                    function off() {
+                    document.getElementById("overlay").style.display = "none";
+                    }
+
+
+                      </script>
+</div>       
+</body>
+</html>

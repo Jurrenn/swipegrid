@@ -1,0 +1,490 @@
+/* Stacked Cards component css */
+body {
+    overflow-x: hidden;
+    font-family: "Open Sans";
+    font-size: 12px;
+    background: #FF5864;
+    padding: 70px;
+    margin:10%;
+    min-height: 100vh;
+  }
+  h1 {
+      color:White;
+      font-family: "Roboto",
+  }
+  
+  .no-transition {
+    -webkit-transition: none ! important;
+    -o-transition: none ! important;
+    transition: none ! important;
+  }
+  
+  .stackedcards-overflow {
+      overflow-y: hidden !important;
+  }
+  
+  .stackedcards.init {
+      opacity: 0;/* set the opacity to 0 if you want a fade-in effect to stacked cards on page load */
+  }
+  
+  .stackedcards {
+      position: relative;
+  }
+  
+  .stackedcards * {
+      -webkit-user-select: none;
+              -moz-user-select: none;
+               -ms-user-select: none;
+           user-select: none;
+  }
+  
+  .stackedcards--animatable {
+      -webkit-transition: all 400ms ease;
+              -o-transition: all 400ms ease;
+              transition: all 400ms ease;
+  }
+  
+  .stackedcards .stackedcards-container > *,
+  .stackedcards-overlay {
+      position: absolute;
+      width: 100%; /* set 100% */
+      height: 300px; /* set 100% */
+      will-change: transform, opacity;
+      top: 0;
+      border-radius: 10px;
+      /* Minimum width of 24rem and grow to fit available space */
+	
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+	display: inline-block;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+      
+  }
+  
+  .stackedcards-overlay.left > div,
+  .stackedcards-overlay.right > div,
+  .stackedcards-overlay.top > div {
+      visibility: hidden;
+      width: 100%;
+      height: 100%;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+  }
+  
+  .stackedcards-overlay.left,
+  .stackedcards-overlay.right,
+  .stackedcards-overlay.top {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      left: 0;
+      opacity: 0;
+      top: 0;
+      height: 100%;
+      font-size: 24px; /* this style was added only for better preview */
+      text-transform: uppercase; /* this style was added only for better preview */
+      font-weight: 500; /* this style was added only for better preview */
+      color: #fff; /* this style was added only for better preview */
+  }
+  
+  .stackedcards-overlay.top {
+      background: #E38568;
+      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  }
+  
+  .stackedcards-overlay.right {
+      background: #7BB3C5;
+      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  }
+  
+  .stackedcards-overlay.left {
+      background: #E58D93;
+      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  }
+  
+  .stackedcards-overlay.left:empty,
+  .stackedcards-overlay.right:empty,
+  .stackedcards-overlay.top:empty {
+    display: none !important;
+  }
+  
+  .stackedcards-overlay-hidden {
+      display: none;
+  }
+  
+  .stackedcards-origin-bottom {
+      -webkit-transform-origin: bottom;
+              -ms-transform-origin: bottom;
+          transform-origin: bottom;
+  }
+  
+  .stackedcards-origin-top {
+      -webkit-transform-origin: top;
+              -ms-transform-origin: top;
+          transform-origin: top;
+  }
+  
+  .stackedcards-bottom,
+  .stackedcards-top,
+  .stackedcards-none {
+      background: #fff; /* set card background background */
+      height: 100%;
+  }
+  
+  .stackedcards .stackedcards-container > :nth-child(1) {
+      position: relative;
+      display: block;
+  }
+  
+  /* global actions buttons*/
+  .global-actions {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      width: 100%;
+      margin-top: 10px;
+  }
+  
+
+  .right-action,
+  .left-action {
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #FDFDFD;
+      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+      transition: all .2s ease-in-out;
+  }
+
+.left-action:hover { transform: scale(0.95); }
+.top-action:hover { transform: scale(0.95); }
+.right-action:hover { transform: scale(0.95); }
+
+  
+  .top-action {
+      background: #556270;
+      margin: 0 10px;
+      width: 70%;
+      height: 50px;
+      border-radius: 10px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #FDFDFD;
+      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+      transition: all .2s ease-in-out;
+  }
+
+  .export{
+    background: #556270;
+      margin: 0 10px;
+      width: 70%;
+      height: 50px;
+      border-radius: 10px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #FDFDFD;
+      box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+      transition: all .2s ease-in-out;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      width: 100%;
+      margin-top: 10px;
+  }
+  
+  .right-action { background: #ADD8C7; }
+  .left-action { background: #E30047; }
+  
+  /* elements on stacked cards */
+  .card-item { background: #FDFDFD; }
+  .card-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  #logo {
+    position:absolute;
+    left:0;
+    top:0;
+    margin-left:2%;
+    font-size:40px;
+
+  }
+
+  .card-item h1{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    color:black;
+    
+  }
+.clog{
+    text-align: center;
+    vertical-align: middle;
+    color:black;
+}
+
+
+#red    {
+color:#E58D93;
+}
+
+#green    {
+    color:#7BB3C5;
+    }
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 9000; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+#overlay h1{
+    color:#FDFDFD;
+    font-size:40px;
+    text-align: center;
+    vertical-align: middle;
+}
+#overlayWhite{
+    width: 1000px;
+        height: 700px;
+        background-color: #FDFDFD;
+
+        position:absolute; /*it can be fixed too*/
+        left:0; right:0;
+        top:0; bottom:0;
+        margin:auto;
+
+        /*this to solve "the content will not be cut when the window is smaller than the content": */
+        max-width:100%;
+        max-height:100%;
+        overflow:auto;
+}
+
+/*
+
+All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 77). 
+        
+The 'supports' rule will only run if your browser supports CSS grid.
+
+Flexbox is used as a fallback so that browsers which don't support grid will still recieve an identical layout.
+
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+
+:root {
+	/* Base font size */
+	font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+.overlayContainer {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 2rem 2rem 2rem;
+}
+
+.heading {
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 4rem;
+	font-weight: 1000;
+	text-align: center;
+	padding: 1.5rem 0;
+    color: black;
+    z-index: 9002;
+}
+
+.heading span {
+	display: block;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -2rem -2rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 0rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+
+*/
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
+}
+    .wrapper{
+        padding:10%;
+        margin-top:-20%;
+    }
+    #container {
+        width: 500px;
+        margin: auto !important;
+        display: block;
+        height: 500px;
+        position: relative;
+        list-style-type: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .buddy {
+        display: none;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        color: #fff;
+        padding: 20px;
+        width: 360px;
+        height: 360px;
+        top: 50px;
+        left: 50px;
+        position: absolute;
+        cursor: hand;
+      }
+      .rotate-left {
+        transform: rotate(30deg) scale(0.8);
+        transition: 1s;
+        margin-left: 400px;
+        cursor: e-resize;
+        opacity: 0;
+        z-index: 10;
+      }
+      .rotate-right {
+        transform: rotate(-30deg) scale(0.8);
+        transition: 1s;
+        opacity: 0;
+        margin-left: -400px;
+        cursor: w-resize;
+        z-index: 10;
+      }
+      .avatar {
+        background: #222;
+        width: 340px;
+        height: 340px;
+        display: block;
+        margin-top: 10px;
+        margin-left: 10px;
+        background-size: auto 160% !important;
+        background-position: center;
+       background-repeat: no-repeat;
+      }
+      .like {
+        border-radius: 5px;
+        padding: 5px 10px;
+        border: 2px solid green;
+        color: green;
+        text-transform: uppercase;
+        font-size: 15px;
+        position: absolute;
+        top: 50px;
+        right: 40px;
+        text-shadow: none;
+      }
+      .dislike {
+        border-radius: 5px;
+        padding: 5px 10px;
+        border: 2px solid red;
+        color: red;
+        text-transform: uppercase;
+        font-size: 15px;
+        position: absolute;
+        top: 50px;
+        left: 40px;
+        text-shadow: none;
+      }

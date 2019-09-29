@@ -1,0 +1,100 @@
+<html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="../leap-0.6.4.js"></script>
+  <script>
+
+  $(document).ready(function() {
+    window.controller = new Leap.Controller({enableGestures: true});
+
+    var swiper = controller.gesture('swipe');
+
+    var tolerance = 50;
+    var cooloff = 300;
+
+    var x = 2, y = 2; 
+
+    var updateHighlight = function() {
+      $('.grid div').removeClass('highlight');
+      $('.grid #d'+x+"_"+y).addClass('highlight');
+      document.getElementsByClassName('highlight')[0].style.visibility = 'visible';
+    }
+
+    var slider = _.debounce(function(xDir, yDir) {
+      x += xDir;
+      x = (x + 5) % 5;
+      y += yDir;
+      y = 2;    // ik heb deze 2 gemaakt zodat we op een lijn zijn
+      console.log("x:"+x);
+      console.log("y:"+y);
+
+      console.log('.grid #d'+x+"_"+y);
+      updateHighlight();
+    }, cooloff);
+
+    swiper.update(function(g) {
+      if (Math.abs(g.translation()[0]) > tolerance || Math.abs(g.translation()[1]) > tolerance) {
+        var xDir = Math.abs(g.translation()[0]) > tolerance ? (g.translation()[0] > 0 ? -1 : 1) : 0;
+        var yDir = 2;
+        slider(xDir, yDir);
+      }
+    });
+
+   
+    controller.connect();
+    updateHighlight();
+  })
+  </script>
+
+  <style>
+  .highlight {
+    border: 10px red solid !important;
+    visibility: visible;
+  }
+
+  #slide {
+    background-color:white;
+    float: left;
+    width: 100%;
+    height: 100%;
+  }
+
+  .grid div {
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    float: left;
+    border: 10px black solid;
+  }
+
+#d0_2{
+  background: orange;
+  visibility: hidden;
+}
+#d1_2{
+  background: yellow;
+  visibility: hidden;
+}
+
+#d2_2{
+  background: greenyellow;
+  visibility: hidden;
+}
+
+#d3_2{
+  background: green;
+  visibility: hidden;
+}
+
+#d4_2{
+  background: lightseagreen;
+  visibility: hidden;
+}
+  </style>
+</head>
+<body>
+  <button onclick="controller.connection.enableGestures(true);">Enable Gestures</button>
+  <button onclick="controller.connection.enableGestures(false);">Disable Gestures</button>
+</body>
+</html>
