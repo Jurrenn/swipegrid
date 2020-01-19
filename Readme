@@ -1,4 +1,13 @@
-Ik gebruik in mijn concept de Leap Motion en HTML/CSS, Javascript.
-Installeer eerst de Leap Motion Software en NPM.
+# Readme
+
+Installeer:
+Leap Motion Software
+NPM Express 
+Socket io
+
+Sluit de leap motion aan
+
 Je kunt controleren of swipes gedetecteerd worden door inspect element te doen op de webapp - 
-Ik heb mijn code zo gemaakt dat de bewegingen feedback geven in de console.
+Bedetecteerde bewegingen worden in de console van je browser uitgeschreven
+
+Ik gebruik in mijn concept de Leap Motion en HTML/CSS, Javascript.
